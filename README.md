@@ -1,0 +1,1 @@
+This is a simple to-do application created using vanilla CSS and Javascript.
