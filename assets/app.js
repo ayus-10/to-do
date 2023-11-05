@@ -3,6 +3,9 @@ function addToDoItem() {
     var todoTextElement = document.getElementById("todoText");
     var todoText = todoTextElement.value;
 
+    if (todoText == '')
+        return;
+
     // Create a new todo-item and add required content
     var toDoItem = document.createElement("div");
     toDoItem.classList.add("todo-item");
@@ -13,11 +16,14 @@ function addToDoItem() {
     toDoItem.innerHTML = toDoItemContents;
 
     // Append the created todo-item element to parent element
-    const toDos = document.getElementsByClassName("todos")[0];
-    toDos.append(toDoItem);
+    const toDosContainer = document.getElementsByClassName("todos-container")[0];
+    toDosContainer.append(toDoItem);
 
     // Make the input field empty for next use
     todoTextElement.value = '';
+
+    // Save the todos in local storage
+    saveTodos();
 }
 
 function removeToDoItem(event) {
@@ -25,11 +31,38 @@ function removeToDoItem(event) {
     var button = event.target;
     var toDoItem = button.parentElement;
     toDoItem.remove();
+
+    // Update the todos in local storage
+    saveTodos();
 }
 
 function crossToDoItem(event) {
     // Get the clicked checkbox and cross/uncross the corresponding todo text
-    var todoItem = event.target.parentElement;
+    var checkbox = event.target;
+    var todoItem = checkbox.parentElement;
     var todoText = todoItem.getElementsByClassName("todo-item-text")[0];
     todoText.classList.toggle("crossed");
+
+    // Add the attribute checked if the checkbox is checked, so that the checked state of checkbox can be stored in local storage
+    if (checkbox.checked)
+        checkbox.setAttribute('checked', 'checked');
+    else
+        checkbox.removeAttribute('checked');
+
+    // Update the todos in local storage
+    saveTodos();
 }
+
+function saveTodos() {
+    localStorage.setItem("todos", toDos.innerHTML);
+}
+
+function retrieveTodos() {
+    toDos.innerHTML = localStorage.getItem("todos");
+}
+
+// Get all created todo-item
+let toDos = document.getElementsByClassName("todos-container")[0];
+
+// Retrieve previously created todo-item on load
+retrieveTodos();
