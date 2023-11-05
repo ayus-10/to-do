@@ -22,29 +22,10 @@
             <div class="todo-item">
                 <input type="checkbox" class="todo-item-checkbox">
                 <input type="text" class="todo-item-text" placeholder="Click to add a note">
-                <span class="fa fa-close close-btn"></span>
-            </div>
-            <div class="todo-item">
-                <input type="checkbox" class="todo-item-checkbox">
-                <input type="text" class="todo-item-text" placeholder="Click to add a note">
-                <span class="fa fa-close close-btn"></span>
-            </div>
-            <div class="todo-item">
-                <input type="checkbox" class="todo-item-checkbox">
-                <input type="text" class="todo-item-text" placeholder="Click to add a note">
-                <span class="fa fa-close close-btn"></span>
-            </div>
-            <div class="todo-item">
-                <input type="checkbox" class="todo-item-checkbox">
-                <input type="text" class="todo-item-text" placeholder="Click to add a note">
-                <span class="fa fa-close close-btn"></span>
-            </div>
-            <div class="todo-item">
-                <input type="checkbox" class="todo-item-checkbox">
-                <input type="text" class="todo-item-text" placeholder="Click to add a note">
-                <span class="fa fa-close close-btn"></span>
+                <button class="fa fa-close close-btn" onclick="removeToDoItem(event)"></button>
             </div>
         </div>
+        <button class="add-todo" onclick="addToDoItem()">Add a TODO</button>
     </div>
 
     <script src="app.js"></script>
