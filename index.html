@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TODOs</title>
-    <link rel="stylesheet" href="./assets/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
-</head>
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="title">
-            Welcome to TODOs
-        </div>
-        <div class="todos">
-            <div class="todo-item">
-                <input type="text" class="todo-item-text" id="todoText" placeholder="Click to add a todo note">
-                <button class="add-todo" onclick="addToDoItem()">Add</button>
-            </div>
-            <div class="todos-container"></div>
-        </div>
+      <div class="title">Welcome to TODOs</div>
+      <div class="todos">
+        <form class="todo-item" onsubmit="addToDoItem(event)">
+          <input
+            type="text"
+            class="todo-item-text"
+            id="todoText"
+            placeholder="Click to add a todo note"
+          />
+          <button class="add-todo">Add</button>
+        </form>
+        <div class="todos-container"></div>
+      </div>
     </div>
 
     <script src="./assets/app.js"></script>
-</body>
-
+  </body>
 </html>
